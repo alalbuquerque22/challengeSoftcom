@@ -1,10 +1,11 @@
 import React,{useRef} from 'react'
-import { Button, Text, View } from 'react-native'
+import { View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Header from '../../components/Header'
-import Styles from './styles'
+import {ContainerView }from '../../components/Container'
+import {Button,BoxInputs,Text,Input,ButtonText} from './styles'
 
 export default function CreateItems(){
     const name = useRef(null);
@@ -22,47 +23,58 @@ export default function CreateItems(){
     });
 
     return(
-        <View style={Styles.container}>
+        <ContainerView >
             <Header/>
-            <View>
-               <Formik
-                    initialValues={{
-                        name:'',
-                        quantity:'',
-                        price:''
-                    }}
-                    onSubmit={
-                        (values)=>{
-                            console.log('Aqui estao os valores do Submit =>',values)
+            <BoxInputs>
+                <Formik
+                        initialValues={{
+                            name:'',
+                            quantity:'',
+                            price:''
                         }}
-                    validationSchema={FormSchema}
-               >
-            {
-               ({values,handleChange, handleSubmit})=>(
-                    <View>
-                        <Text>Nome</Text>
-                        <TextInput 
-                            ref={name} 
-                            value={values.name} 
-                            onChangeText={handleChange('name')}/>
-                        <Text>Quantidade</Text>
-                        <TextInput 
-                            ref={quantity } 
-                            value={values.quantity} 
-                            onChangeText={handleChange('quantity')}/>
-                        <Text>Preco</Text>
-                        <TextInput 
-                            ref={price} 
-                            value={values.price} 
-                            onChangeText={handleChange('price')}/>
-                        <Button title="Cadastrar" onPress={()=>handleSubmit}/>
-                    </View>
-                    )
-            }
-               </Formik>
-           
-            </View>
-        </View>
+                        onSubmit={
+                            (values)=>{
+                                console.log('Aqui estao os valores do Submit =>',values)
+                            }}
+                        validationSchema={FormSchema}
+                >
+                {
+                ({values,handleChange, handleSubmit})=>(
+                        <View>
+                            <Text>Nome do produto:</Text>
+                            <Input 
+                            placeholder= ' Produto'
+                            placeholderTextColor='#e2e2e2'
+                                ref={name} 
+                                value={values.name} 
+                                onChangeText={handleChange('name')}/>
+                            <Text>Quantidade:</Text>
+                            <Input 
+                                placeholder=" X Unidades"
+                                placeholderTextColor='#e2e2e2'
+                                keyboardType= 'numeric'
+                                ref={quantity } 
+                                value={values.quantity} 
+                                onChangeText={handleChange('quantity')}
+                                />
+                            <Text>Preço:</Text>
+                            <Input 
+                                placeholder = " R$ XX.XX    "
+                                placeholderTextColor='#e2e2e2'
+                                keyboardType= 'numeric'
+                                ref={price} 
+                                value={values.price} 
+                                onChangeText={handleChange('price')}/>
+                            <Button onPress={()=>handleSubmit}>
+                                <ButtonText> Cadastrar </ButtonText>
+                            </Button>
+                        </View>
+                        )
+                }
+                </Formik>
+            
+            </BoxInputs>
+        </ContainerView>
     )
 
 }

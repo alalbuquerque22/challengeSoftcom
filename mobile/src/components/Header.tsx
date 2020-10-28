@@ -15,7 +15,7 @@ export default function Header(){
 
            
 export const LogoBox = styled.View`
-    margin-top:8%;
+    margin-top:10%;
 
     align-items:center;
 `

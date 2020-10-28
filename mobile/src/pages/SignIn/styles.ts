@@ -1,40 +1,62 @@
 import styled from 'styled-components/native'
+import Constants from 'expo-constants';
 
 
-
+const Statusbarheight = Constants.statusBarHeight
 export const Container = styled.View`
-background-color: #f5f5f5;
+background-color: #ff9c1a;
 height:100%;
 flex:1;
-`
-
-export const LogoBox = styled.View`
-margin-top:8%;
-
+padding-top:${Statusbarheight};
+padding:8px;
 align-items:center;
 `
-export const Image = styled.Image`
 
-`
 export const BoxInputs = styled.View`
-width:80%;
-margin-top:40px;
+background-color:#ffb555;
+flex:1;
+width:100%;
+padding:10%;
+margin-top:20%;
 justify-content:center;
-align-items:center;
-;
+border-radius:50px;
+`
+export const Text = styled.Text`
+color:#fff;
+font-family:Verdana;
+`
+
+export const Label = styled.Text`
+color:#fff;
+font-family:Verdana;
+padding:2%;
 `
 export const Input = styled.TextInput`
-width:80%;
-
-
-border:1px solid #fff;
+width:100%;
+margin-top:5px;
+border:2px solid #fff;
 border-radius:8px;
-color:#999999;
+color:#dddddd;
 font-size:24px;
 `
 
 export const Footer = styled.Text`
-color: palevioletred;
+color: #FFF;
+margin-top:25px;
+height:5%;
 font-size:20px;
+align-items:center;
+justify-content:center;
+
 `
 
+export const ButtonArea = styled.TouchableOpacity`
+background-color:#233368;
+border:0px;
+border-radius:10px;
+margin-top:10px;
+
+
+
+
+`

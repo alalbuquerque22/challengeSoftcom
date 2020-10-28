@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button, Text, View } from 'react-native'
+import {  View } from 'react-native'
 
 import {useNavigation}from '@react-navigation/native' 
-
+import {BoxInputs,Button,ButtonText} from './styles'
 
 import Header from      '../../components/Header'
+import {ContainerView} from '../../components/Container'
 export default function Home(){
     const navigation = useNavigation();
 
@@ -16,15 +17,17 @@ export default function Home(){
         navigation.navigate("ShowItems")
     }
     return(
-        <View>
+        <ContainerView>
             <Header/>
-            <View>
-      
-                <Button title="Cadastrar item" onPress={navigateToCreate}/>
-                <Button title="Listar itens" onPress={navigateToShowItems}/>
-            
-           
-            </View>
-        </View>
+            <BoxInputs >
+                <Button onPress={navigateToCreate}>
+                    <ButtonText> Cadastrar item </ButtonText>
+                </Button>
+                <Button onPress={navigateToShowItems}>
+                    <ButtonText> Listar Itens</ButtonText>
+                </Button>
+                       
+            </BoxInputs>
+        </ContainerView>
     )
 }

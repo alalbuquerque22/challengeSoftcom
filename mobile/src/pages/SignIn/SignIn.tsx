@@ -2,13 +2,19 @@ import React from 'react'
 
 import {useNavigation}from '@react-navigation/native' 
 import {
-    Container,
+    
     Footer,
     BoxInputs,
-    Input
+    Input,
+    ButtonArea,
+    Text,
+    Label,
+    
 } from './styles'
 import Header from      '../../components/Header'
-import { Button } from 'react-native'
+import { ContainerView } from      '../../components/Container'
+import { } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 export default function SingIn(){
@@ -21,19 +27,26 @@ export default function SingIn(){
     }
      
     return(
-        <Container >
+        <ContainerView>
             <Header/>
             <BoxInputs>
-                <Input placeholder="Login"></Input>
+                <Label>Login:</Label>
+                <Input placeholder="Seu Email"></Input>
+
+                <Label>Senha:</Label>
                 <Input placeholder="Senha"></Input>
-                <Button title="Entrar" onPress={navigateToHome}>
-                    
-                </Button>
+                <ButtonArea title="Entrar" onPress={navigateToHome}>
+                    <Text>  Entrar  </Text>
+                </ButtonArea>
             </BoxInputs>
             <Footer>
-            <Button title="Não Possuo cadastro" onPress={navigateToSignUp}/>
+            <TouchableOpacity  onPress={navigateToSignUp}>
+                <Text>
+                Não Possuo cadastro
+                </Text>
+            </TouchableOpacity>
                
             </Footer>
-        </Container>
+        </ContainerView>
     )
 }

@@ -1,28 +1,31 @@
 import React from 'react'
-import { View, Text, Button, TextInput, Image } from 'react-native'
-
+import { } from 'react-native'
+import {
+    Button,
+    BoxInputs,
+    Input,
+    Footer,
+    ButtonText,
+} from './styles'
 import Header from      '../../components/Header'
+import {ContainerView} from '../../components/Container'
 import LogoImg from '../../assets/logo.png'
 export default function SingUp(){
     return(
-        <View>
+        <ContainerView>
          <Header/>
 
-            <View>
-                <TextInput placeholder="Nome"/>
-                <TextInput placeholder="Email"/>
-                <TextInput placeholder="Senha"/>
-            </View>
+            <BoxInputs>
+                <Input placeholder=" Nome" placeholderTextColor="#FFF"/>
+                <Input placeholder=" Email" placeholderTextColor="#FFF"/>
+                <Input placeholder=" Senha" placeholderTextColor="#FFF"/>
+                <Button onPress={()=>{}}>
+                    <ButtonText> Cadastrar </ButtonText>
+                </Button>
+            </BoxInputs>
           
-          <View>
-            <Button
-                onPress={()=>{}}
-                title="Cadastrar"
-                color="#841584"
-                accessibilityLabel="Learn more about this purple button"
-/>
-
-            </View>
-        </View>
+          <Footer/>
+            
+        </ContainerView>
     )
 }
