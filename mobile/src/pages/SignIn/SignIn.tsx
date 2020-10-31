@@ -1,20 +1,23 @@
 import React from 'react'
 
 import {useNavigation}from '@react-navigation/native' 
-import {
-    
+import {    
     Footer,
     BoxInputs,
     Input,
     ButtonArea,
+    TextButton,
     Text,
-    Label,
-    
+    SubText,
+    Container,
+    Box,
+    TouchText,
 } from './styles'
 import Header from      '../../components/Header'
-import { ContainerView } from      '../../components/Container'
-import { } from 'react-native'
+import { ImageBackground ,StyleSheet} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+
+import Wallpaper from '../../assets/screen.jpg';
 
 
 export default function SingIn(){
@@ -27,26 +30,44 @@ export default function SingIn(){
     }
      
     return(
-        <ContainerView>
-            <Header/>
-            <BoxInputs>
-                <Label>Login:</Label>
-                <Input placeholder="Seu Email"></Input>
+        <ImageBackground source={Wallpaper} style={styles.image}> 
+            <Container>
+            
+                <Header/>
+                <Box>
+                <Text>Olá!</Text>
+                 <SubText>Digite seus dados para entrar!</SubText>
+                <BoxInputs>
+                    <Input placeholder=" Email"></Input>
+                    </BoxInputs>
+                    <BoxInputs>
+                    <Input placeholder=" Senha"></Input>
 
-                <Label>Senha:</Label>
-                <Input placeholder="Senha"></Input>
-                <ButtonArea title="Entrar" onPress={navigateToHome}>
-                    <Text>  Entrar  </Text>
-                </ButtonArea>
-            </BoxInputs>
-            <Footer>
-            <TouchableOpacity  onPress={navigateToSignUp}>
-                <Text>
-                Não Possuo cadastro
-                </Text>
-            </TouchableOpacity>
-               
-            </Footer>
-        </ContainerView>
+                    </BoxInputs>
+                    <BoxInputs>
+                        <ButtonArea title="Entrar" onPress={navigateToHome}>
+                            <TextButton>  Entrar   </TextButton>
+                        </ButtonArea>
+                    </BoxInputs>
+                
+                </Box>
+                <Footer>
+                <TouchableOpacity  onPress={navigateToSignUp}>
+                    <TouchText>
+                    Não possui cadastro?
+                    </TouchText>
+                </TouchableOpacity>
+                
+                </Footer>
+            </Container>
+        </ImageBackground>
     )
 }
+const styles = StyleSheet.create({
+    
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+    },
+  });

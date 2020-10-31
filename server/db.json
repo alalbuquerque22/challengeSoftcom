@@ -1,0 +1,65 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Andre lucas",
+      "email": "a@a.com.br",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Andre lucas",
+      "email": "a@a.com.br",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Andre lucas",
+      "email": "a@a.com.br",
+      "password": "123456"
+    },
+    {
+      "name": "testando",
+      "email": "email@email.com.br",
+      "password": "123456",
+      "id": 4
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "name": "Iphone X",
+      "description": "Iphone x - 128gb",
+      "quantity": 1,
+      "price": 4000
+    },
+    {
+      "id": 2,
+      "name": "Iphone X Max",
+      "description": "Iphone x Max - 512gb",
+      "quantity": 1,
+      "price": 5000
+    },
+    {
+      "id": 3,
+      "name": "Iphone 12",
+      "description": "Iphone 12 - 128gb",
+      "quantity": 1,
+      "price": 8000
+    },
+    {
+      "name": "Iphone 8 Plus",
+      "description": "Iphone 8 plus rose - 128gb",
+      "quantity": 1,
+      "price": 4000,
+      "id": 4
+    },
+    {
+      "name": "Iphone 7 Plus",
+      "description": "Iphone 7 preto - 64gb",
+      "quantity": 1,
+      "price": 2200,
+      "id": 5
+    }
+  ]
+}

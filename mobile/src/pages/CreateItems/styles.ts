@@ -6,27 +6,34 @@ import styled from 'styled-components/native'
 
 
 
-export const BoxInputs = styled.View`
-background-color:#ffb555;
+export const Box = styled.View`
+background-color:#ddd5;
 flex:1;
 width:100%;
-padding-top:10%;
+padding:12px;
+margin-top:20%;
+justify-content:center;
 
-margin-top:25% ;
-margin-bottom:30%;
 border-radius:50px;
+opacity:0.98;
 `
+export const BoxInputs = styled.View`
+width:100%;
+padding:15px;
+font-family:Verdana;
+`
+
 export const Text = styled.Text`
 color:#fff;
 font-family:Verdana;
 `
 export const Input = styled.TextInput`
-align-items:center;
-width:98%;
+background-color:#fff;
+width:100%;
 margin-top:5px;
 border:2px solid #fff;
 border-radius:8px;
-color:#fff;
+color:#dddddd;
 font-size:24px;
 `
 

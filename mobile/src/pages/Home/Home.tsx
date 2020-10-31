@@ -1,11 +1,16 @@
 import React from 'react'
-import {  View } from 'react-native'
 
 import {useNavigation}from '@react-navigation/native' 
-import {BoxInputs,Button,ButtonText} from './styles'
 
+
+
+import {BoxInputs,Button,ButtonText,Box} from './styles'
 import Header from      '../../components/Header'
+import Wallpaper from '../../assets/screen.jpg';
 import {ContainerView} from '../../components/Container'
+import {  ImageBackground, StyleSheet} from 'react-native'
+
+
 export default function Home(){
     const navigation = useNavigation();
 
@@ -17,17 +22,32 @@ export default function Home(){
         navigation.navigate("ShowItems")
     }
     return(
-        <ContainerView>
-            <Header/>
-            <BoxInputs >
-                <Button onPress={navigateToCreate}>
-                    <ButtonText> Cadastrar item </ButtonText>
-                </Button>
-                <Button onPress={navigateToShowItems}>
-                    <ButtonText> Listar Itens</ButtonText>
-                </Button>
-                       
-            </BoxInputs>
-        </ContainerView>
+        <ImageBackground source={Wallpaper} style={styles.image}>
+            <ContainerView>
+                <Header/>
+                <Box >
+                    <BoxInputs>
+                    <Button onPress={navigateToCreate}>
+                        <ButtonText> Cadastrar item </ButtonText>
+                    </Button>
+                    </BoxInputs>
+                    <BoxInputs>
+                        <Button onPress={navigateToShowItems}>
+                            <ButtonText> Listar Itens</ButtonText>
+                        </Button>
+                    </BoxInputs>
+                        
+                </Box>
+            </ContainerView>
+        </ImageBackground>
     )
 }
+
+const styles = StyleSheet.create({
+    
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+    },
+  });
