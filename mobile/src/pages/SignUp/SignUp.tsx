@@ -17,6 +17,7 @@ import { ImageBackground, StyleSheet, View } from 'react-native'
 
 import Wallpaper from '../../assets/screen.jpg';
 import api from '../../services/api'
+import { event } from 'react-native-reanimated'
 
 
 
@@ -25,6 +26,7 @@ export default function SingUp(){
     const email = useRef(null)
     const password = useRef(null)
  
+  
 
     const FormSchema = Yup.object().shape({
         name:Yup.string().required('Campo Obrigatorio'),
@@ -47,28 +49,20 @@ export default function SingUp(){
 
                 }}
                 onSubmit={async(values,{resetForm})=>{
-                //  async function handleCreateUser(){
-                //     const data ={
-                //         name:name,
-                //         email:email,
-                //         password:password,
-                //     }
-                            
-                // await api.post('user', data);
+                
+                    
+              
 
-                // }
-                // console.log('valores do submit=>',values);
-                    try { let response = await api.post('/user', values)
+                    try { let response = await api.post('/user',values)
 
                     console.log(response)
                         
                     } catch (error) {
-                        console.log('erro na requisicao=> ',error)
+                        console.log('erro na requisicao=> ',error ) 
                         
                     }
                
-                
-
+                 
                     resetForm()    
                 }}
                 validationSchema={FormSchema}
