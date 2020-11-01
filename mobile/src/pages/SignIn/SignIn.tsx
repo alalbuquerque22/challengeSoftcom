@@ -35,7 +35,7 @@ export default function SingIn(){
             
                 <Header/>
                 <Box>
-                <Text>Olá!</Text>
+                 <Text>Olá! </Text>
                  <SubText>Digite seus dados para entrar!</SubText>
                 <BoxInputs>
                     <Input placeholder=" Email"></Input>

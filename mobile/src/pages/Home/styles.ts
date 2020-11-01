@@ -4,7 +4,7 @@ export const Box= styled.View`
 background-color:#ddd5;
 flex:1;
 width:100%;
-padding:12%;
+padding:10%;
 margin-top:20%;
 justify-content:center;
 align-items:center;

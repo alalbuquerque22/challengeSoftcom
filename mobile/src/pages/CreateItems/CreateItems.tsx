@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useEffect, useRef} from 'react'
 import { View,StyleSheet } from 'react-native'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
@@ -15,7 +15,6 @@ export default function CreateItems(){
     const price = useRef(null)
     const  description =useRef(null)
 
-    //const data= 123;
     const FormSchema = Yup.object().shape({
         name: Yup.string()
         .required('Campo Obrigatorio'),
@@ -29,7 +28,8 @@ export default function CreateItems(){
         .min(0, 'Valor deve ser 0 ou maior'),
     });
 
-    //await api.post('produtos',data)
+ //   useEffect(()=>{  await api.post('produtos',data)},[])
+   
 
 
     return(

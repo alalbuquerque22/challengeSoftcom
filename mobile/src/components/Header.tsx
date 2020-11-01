@@ -11,7 +11,7 @@ export default function Header(){
      </LogoBox>
         
     )
-        }
+}
 
            
 export const LogoBox = styled.View`

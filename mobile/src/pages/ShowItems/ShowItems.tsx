@@ -61,7 +61,7 @@ const ShowItems =()=>{
            <Box>
              
 
-             {/* map para imprimir todos os valores da lista de produtos produtos  */}
+             {/* map para imprimir todos os valores da lista de produtos  */}
            
              {/* {produtos.map(produto=>(
                  
