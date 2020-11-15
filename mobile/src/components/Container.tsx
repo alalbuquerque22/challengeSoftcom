@@ -12,6 +12,7 @@ return(
 const Statusbarheight = `${Constants.statusBarHeight}px`
 
 export const ContainerView = styled.View`
+
 color:#525252;
 height:100%;
 flex:1;

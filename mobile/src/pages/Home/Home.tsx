@@ -8,12 +8,16 @@ import {BoxInputs,Button,ButtonText,Box} from './styles'
 import Header from      '../../components/Header'
 import Wallpaper from '../../assets/screen.jpg';
 import {ContainerView} from '../../components/Container'
-import {  ImageBackground, StyleSheet} from 'react-native'
-
+import {  ImageBackground, StyleSheet,TouchableOpacity,Text} from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Home(){
     const navigation = useNavigation();
-
+  
+ 
+    function handleNavigateToHome(){
+        navigation.navigate('SignIn')
+    }
     
     function navigateToCreate(){
         navigation.navigate("CreateItems")
@@ -25,6 +29,13 @@ export default function Home(){
         <ImageBackground source={Wallpaper} style={styles.image}>
             <ContainerView>
                 <Header/>
+
+            <TouchableOpacity onPress={handleNavigateToHome} style={styles.HandlingButtons}>
+                <Text style={styles.BackButton}>
+                    <Ionicons name="ios-arrow-round-back" size={24} color="#000000"  /> Voltar</Text>
+                </TouchableOpacity>
+            
+           
                 <Box >
                     <BoxInputs>
                     <Button onPress={navigateToCreate}>
@@ -50,4 +61,20 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         justifyContent: "center"
     },
+    HandlingButtons:{
+        flexDirection:"row",
+        width:"100%",
+        marginTop:-40,
+        marginBottom:-80,
+        
+        
+        
+    },
+    BackButton:{
+        color:"#000",
+        marginLeft:"5%",
+        fontSize:22,
+        fontWeight:"bold",
+        
+    }
   });

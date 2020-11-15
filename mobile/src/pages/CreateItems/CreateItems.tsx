@@ -1,20 +1,27 @@
 import React,{useEffect, useRef} from 'react'
-import { View,StyleSheet } from 'react-native'
+import { View,StyleSheet,TouchableOpacity,Text} from 'react-native'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Header from '../../components/Header'
 import {ContainerView} from '../../components/Container'
-import {Button,Box,BoxInputs,Text,Input,ButtonText} from './styles'
+import {Button,Box,BoxInputs,Texto,Input,ButtonText} from './styles'
 import { ImageBackground } from '../SignIn/styles'
 import Wallpaper from '../../assets/screen.jpg';
 import api from '../../services/api'
+import { useNavigation } from '@react-navigation/native'
+import { Ionicons } from '@expo/vector-icons';
 
 export default function CreateItems(){
     const name = useRef(null);
     const quantity = useRef(null)
     const price = useRef(null)
     const  description =useRef(null)
-
+    const {navigate} = useNavigation()
+ 
+    function handleNavigateToHome(){
+        navigate('Home')
+    }
+  
     const FormSchema = Yup.object().shape({
         name: Yup.string()
         .required('Campo Obrigatorio'),
@@ -36,6 +43,9 @@ export default function CreateItems(){
         <ImageBackground source={Wallpaper} style={styles.image}>
         <ContainerView>
             <Header/>
+            <TouchableOpacity onPress={handleNavigateToHome} style={styles.HandlingButtons}>
+                <Text style={styles.BackButton}><Ionicons name="ios-arrow-round-back" size={24} color="#000000" /> Voltar</Text></TouchableOpacity>
+            
             <Box>
                 <Formik
                         initialValues={{
@@ -55,7 +65,7 @@ export default function CreateItems(){
                 ({values,handleChange, handleSubmit})=>(
                         <View>
                             <BoxInputs>
-                                <Text>Nome do produto:</Text>
+                                <Texto>Nome do produto:</Texto>
                                 <Input 
                                 placeholder= ' Produto'
                                 placeholderTextColor='#e2e2e2'
@@ -64,7 +74,7 @@ export default function CreateItems(){
                                     onChangeText={handleChange('name')}/>
                             </BoxInputs>
                             <BoxInputs>
-                                <Text>Quantidade:</Text>
+                                <Texto>Quantidade:</Texto>
                                 <Input 
                                     placeholder=" X Unidades"
                                     placeholderTextColor='#e2e2e2'
@@ -75,7 +85,7 @@ export default function CreateItems(){
                                     />
                             </BoxInputs>
                             <BoxInputs>
-                                    <Text>Descrição:</Text>
+                                    <Texto>Descrição:</Texto>
                                 <Input 
                                     placeholder = " Nome - Cor - Formato    "
                                     placeholderTextColor='#e2e2e2'
@@ -86,7 +96,7 @@ export default function CreateItems(){
                                     onChangeText={handleChange('description')}/>
                             </BoxInputs>
                             <BoxInputs>
-                                <Text>Preço:</Text>
+                                <Texto>Preço:</Texto>
                                 <Input 
                                     placeholder = " R$ XX.XX    "
                                     placeholderTextColor='#e2e2e2'
@@ -121,4 +131,20 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         justifyContent: "center"
     },
+
+    HandlingButtons:{
+        flexDirection:"row",
+        width:"100%",
+        marginTop:-40,
+        marginBottom:-80,
+        
+        
+    },
+    BackButton:{
+        color:"#000",
+        marginLeft:"5%",
+        fontSize:22,
+        fontWeight:"bold"
+        
+    }
   });

@@ -23,7 +23,7 @@ padding:15px;
 font-family:Verdana;
 `
 
-export const Text = styled.Text`
+export const Texto = styled.Text`
 color:#fff;
 font-family:Verdana;
 `

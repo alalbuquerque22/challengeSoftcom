@@ -9,6 +9,8 @@ import {ImageBackground, StyleSheet, Text, View, TouchableOpacity} from 'react-n
 import { RiDeleteBin6Line,RiFileEditLine } from "react-icons/ri"
 import Wallpaper from '../../assets/screen.jpg';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 interface Produto{
     id: number;
@@ -20,6 +22,12 @@ interface Produto{
 }
 
 const ShowItems =()=>{
+    
+    const {navigate} = useNavigation()
+ 
+    function handleNavigateToHome(){
+        navigate('Home')
+    }
  
     const [produtos,setProdutos] = useState<Produto[]>([]);
     
@@ -58,6 +66,9 @@ const ShowItems =()=>{
         <ImageBackground source={Wallpaper} style={styles.image}> 
         <ContainerView>
             <Header/>
+            <TouchableOpacity onPress={handleNavigateToHome} style={styles.HandlingButtons}>
+                <Text style={styles.BackButton}><Ionicons name="ios-arrow-round-back" size={24} color="#000000" /> Voltar</Text></TouchableOpacity>
+            
            <Box>
              
 
@@ -130,9 +141,25 @@ const styles = StyleSheet.create({
     textResponseBox:{
         backgroundColor:"#fff",
         borderStyle:"solid",
-        color:"#000",
-        borderRadius:20,
+        color:"#8d8d8d",
+        borderRadius:6,
         fontFamily:"Arial",
+        
+        
+    },
+    HandlingButtons:{
+        flexDirection:"row",
+        width:"100%",
+        marginTop:-40,
+        marginBottom:-80,
+        
+        
+    },
+    BackButton:{
+        color:"#000",
+        marginLeft:"5%",
+        fontSize:22,
+        fontWeight:"bold"
         
     }
     

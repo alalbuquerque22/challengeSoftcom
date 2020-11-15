@@ -13,11 +13,14 @@ import Header from      '../../components/Header'
 import {ContainerView} from '../../components/Container'
 import { Formik,Field } from 'formik'
 import * as Yup from 'yup'
-import { ImageBackground, StyleSheet, View } from 'react-native'
+import { ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
 
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 import Wallpaper from '../../assets/screen.jpg';
 import api from '../../services/api'
 import { event } from 'react-native-reanimated'
+import { useNavigation } from '@react-navigation/native'
 
 
 
@@ -25,7 +28,11 @@ export default function SingUp(){
     const name = useRef(null);
     const email = useRef(null)
     const password = useRef(null)
+    const {navigate} = useNavigation()
  
+    function handleNavigateToHome(){
+        navigate('SignIn')
+    }
   
 
     const FormSchema = Yup.object().shape({
@@ -36,7 +43,13 @@ export default function SingUp(){
     return(
         <ImageBackground source={Wallpaper} style={styles.image}> 
         <ContainerView>
-         <Header/>
+           
+            <Header/>
+
+            <TouchableOpacity onPress={handleNavigateToHome} style={styles.HandlingButtons}>
+                <Text style={styles.BackButton}><Ionicons name="ios-arrow-round-back" size={24} color="#000000" /> Voltar</Text></TouchableOpacity>
+            
+           
 
             <Box>
             <Text>Bem Vindo!</Text>
@@ -123,4 +136,19 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         justifyContent: "center"
     },
+    HandlingButtons:{
+        flexDirection:"row",
+        width:"100%",
+        marginTop:-40,
+        marginBottom:-80,
+        
+        
+    },
+    BackButton:{
+        color:"#000",
+        marginLeft:"5%",
+        fontSize:22,
+        fontWeight:"bold"
+        
+    }
   });
