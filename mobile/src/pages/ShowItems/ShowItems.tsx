@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff",
         borderStyle:"solid",
         color:"#8d8d8d",
-        borderRadius:6,
+        borderRadius:12,
         fontFamily:"Arial",
         
         
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         width:"100%",
         marginTop:-40,
         marginBottom:-80,
-        
+        height:"18%"
         
     },
     BackButton:{

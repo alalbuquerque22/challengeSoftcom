@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         width:"100%",
         marginTop:-40,
         marginBottom:-80,
-        
+        height:"20%"
         
     },
     BackButton:{

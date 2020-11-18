@@ -47,7 +47,7 @@ export default function SingUp(){
             <Header/>
 
             <TouchableOpacity onPress={handleNavigateToHome} style={styles.HandlingButtons}>
-                <Text style={styles.BackButton}><Ionicons name="ios-arrow-round-back" size={24} color="#000000" /> Voltar</Text></TouchableOpacity>
+                <Text style={styles.BackButton}><Ionicons name="ios-arrow-round-back" size={20} color="#000000" /> Voltar</Text></TouchableOpacity>
             
            
 
@@ -141,13 +141,13 @@ const styles = StyleSheet.create({
         width:"100%",
         marginTop:-40,
         marginBottom:-80,
-        
+        height:"18%"
         
     },
     BackButton:{
         color:"#000",
         marginLeft:"5%",
-        fontSize:22,
+        fontSize:18,
         fontWeight:"bold"
         
     }
